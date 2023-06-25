@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Updating Elements</title>
+</head>
+<body>
+  <ul id="items" class="list-group">
+    <li class="list-group-item">Item 1</li>
+    <li class="list-group-item">Item 2</li>
+    <li class="list-group-item">Item 3</li>
+    <li class="list-group-item">Item 4</li>
+  </ul>
+
+  <script>
+    // Create a new <li> element
+    var newListItem = document.createElement("li");
+    newListItem.textContent = "New Item";
+
+    // Add the new element to the <ul> with id "items"
+    var itemsList = document.getElementById("items");
+    itemsList.appendChild(newListItem);
+
+    // Get the new <li> element using getElementsByClassName
+    var elementsByClassName = document.getElementsByClassName("list-group-item");
+    var newListItemByClassName = elementsByClassName[elementsByClassName.length - 1];
+    newListItemByClassName.textContent = "Updated Item (by ClassName)";
+
+    // Get the new <li> element using getElementsByTagName
+    var elementsByTagName = document.getElementsByTagName("li");
+    var newListItemByTagName = elementsByTagName[elementsByTagName.length - 1];
+    newListItemByTagName.textContent = "Updated Item (by TagName)";
+  </script>
+</body>
+</html>
